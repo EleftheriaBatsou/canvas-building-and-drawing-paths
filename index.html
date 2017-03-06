@@ -1,0 +1,69 @@
+<html>
+<head>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script>
+function draw(){
+	var ctx = document.getElementById('my_canvas').getContext('2d');	
+	// beginPath() // Resets the current default path
+	// fill() // Fills subpaths on the current default path
+	// stroke() // Strokes the current default path
+	// clip() // Makes a clipping region out of a path
+	// closePath() // Close current path
+	// moveTo(x, y) // Creates a new subpath with the given point
+	// lineTo(x, y) // creates a new line along the current subpath
+	// isPointInPath(x, y) // Determines if a specified point is in a path
+	
+	// rect(x, y, w, h)
+	// arc(x, y, radius, startAngle, endAngle, anticlockwise)
+	// arcTo(x1, y1, x2, y2, radius) // x1, y1 are the subpath
+	// quadraticCurveTo(cpx, cpy, x, y) cp = bezier control point
+	// bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)
+  
+  /////////////////////////////
+  // rectangular  
+  ctx.beginPath();
+  ctx.moveTo(50,50);
+  ctx.lineTo(250,50);
+  ctx.lineTo(250,150);
+  ctx.lineTo(50,150);
+  ctx.closePath();
+  ctx.stroke();
+  
+  ////////////////////////////
+  //two squares
+  ctx.rect(350, 250, 100, 100);
+  ctx.rect(300, 200, 100, 100);  
+  
+  //////////////////////////
+  //draw a circle
+  ctx.arc(150,150,100, 0,6.28,false);
+  ctx.stroke();
+  
+  // half down circle 
+  ctx.arc(250,150,100,0,Math.PI,false);
+  ctx.stroke();
+  
+  // half upper circle 
+  ctx.arc(250,150,50,0,Math.PI,true);
+  ctx.stroke();
+  
+  // a part of a circle circle 
+  ctx.arc(370,150,110,0,4,true);
+  ctx.stroke();
+	
+}
+window.onload = draw;
+</script>
+</head>
+<body>
+  
+  <h3 style="text-align: center">Canvas | Building and Drawing Paths </h3>
+  
+<canvas id="my_canvas" width="700" height="400"></canvas>
+  
+  <div style="text-align: center">
+    <h5><a href="http://www.eleftheriabatsou.com" target="_blank">Eleftheria Batsou</a> | <a href="http://codepen.io/EleftheriaBatsou" target="_blank">Projects</a></h5>
+  </div> <!-- end footer -->
+  
+</body>  
+</html>
